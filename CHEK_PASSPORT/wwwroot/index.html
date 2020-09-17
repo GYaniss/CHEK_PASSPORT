@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Гомзиков Янис</title>
+</head>
+<body>
+    <h1>СТРАНИЦА ПРОВЕРКИ WEB API ТЕСТОВОГО ЗАДАНИЯ</h1><br />
+    <div>
+        <label>Паспорт серия:</label>
+        <input id="ser"/>
+    </div>
+    <div>
+        <labe>Паспорт номер:</labe>
+        <input id="num" />
+        <button onclick="GetZapros()">Запрос проверки \ статус проверки</button> <br />
+        <a id="gurl"><span id="turl"></span></a>
+        <pre id="ot1"></pre>
+        <pre id="ot2"></pre>
+    </div>
+    <script>
+        function GetZapros() {
+            var ser = document.getElementById("ser").value;
+            var num = document.getElementById("num").value;
+            var httpget = "./api/passport/" + ser.toString() + '/' + num.toString();
+            document.getElementById("gurl").setAttribute("href", httpget);
+            document.getElementById("turl").innerHTML = "Ответ:";
+            var request = new XMLHttpRequest();
+            request.open("GET", httpget, false);
+            request.send();
+            document.getElementById("ot1").innerHTML = request.responseText;
+            document.getElementById("ot2").innerHTML ='Статус ответа:' + request.status;
+        }
+
+    </script>
+</body>
+</html>
