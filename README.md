@@ -18,6 +18,6 @@ REST Web API (http://localhost/api/passport/ser/nom)
 Решение:
 1) JSON Web Tokens
 2) БД Redis
-3) Переход на микросервисную архитектуру - контернизация в Docer: Сервер регистрации клиентов(SSL ON), Сервер кэша Redis, Сервера REST Web API (SSL Off), Kubernetes 
+3) Переход на микросервисную архитектуру - контейнерзация в Docer: Сервер регистрации клиентов(SSL ON), Сервер кэша Redis, Сервера REST Web API (SSL Off), Kubernetes 
 
 
